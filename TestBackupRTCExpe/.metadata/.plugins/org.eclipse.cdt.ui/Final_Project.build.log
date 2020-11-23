@@ -1,0 +1,20 @@
+20:34:44 **** Incremental Build of configuration Debug for project Final_Project ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 '-DHSE_VALUE=8000000' '-DLSI_VALUE=32000' '-DHSE_STARTUP_TIMEOUT=100' '-DHSI_VALUE=16000000' -DDEBUG '-DLSE_STARTUP_TIMEOUT=5000' '-DMSI_VALUE=24000000' '-DLSE_VALUE=32768' '-DDATA_CACHE_ENABLE=1' '-DVDD_VALUE=3300' '-DINSTRUCTION_CACHE_ENABLE=1' '-DEXTERNALSAI2_CLOCK_VALUE=2097000' -DSTM32L476xx -DUSE_FULL_LL_DRIVER '-DEXTERNALSAI1_CLOCK_VALUE=2097000' '-DPREFETCH_ENABLE=0' -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Final_Project.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\GARY Romain\Documents\cours\5A\prog faible NRJ IOT\TestBackupRTCExpe\backup_test\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Final_Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Final_Project.elf
+ 
+arm-none-eabi-objdump -h -S  Final_Project.elf  > "Final_Project.list"
+arm-none-eabi-objcopy  -O binary  Final_Project.elf  "Final_Project.bin"
+arm-none-eabi-size   Final_Project.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8300	     16	   1576	   9892	   26a4	Final_Project.elf
+Finished building: default.size.stdout
+ 
+Finished building: Final_Project.bin
+ 
+Finished building: Final_Project.list
+ 
+
+20:34:47 Build Finished. 0 errors, 0 warnings. (took 3s.436ms)
+
